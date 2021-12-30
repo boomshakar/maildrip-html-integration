@@ -11,13 +11,13 @@ The [Maildrip](https://maildrip.com/) library exported as a [Node.js](https://no
 # Installation
 Installing the [Maildrip-Html](https://npmjs.com/) on your Html page(s) is a simple stepby adding the below script tag in the ```<head> </head> ``` of your page
 
-**Using raw script file**
+**Using jsDelivr CDN:**
 ```html
 <head>
-  <script src="./index.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/femicharisol/maildrip-html-integration/index.js" type="module"></script>
 </head>
 ```
-**Using jsDelivr CDN:**
+**Using maildrip CDN:**
 ```html
 <head>
   <script src="https://cdn.maildrip"></script>
