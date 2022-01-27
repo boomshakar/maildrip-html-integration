@@ -32,7 +32,7 @@ Initializing the [Maildrip-Html](https://npmjs.com/) on your Html page(s) could 
 ### Example 1: Common usage
 
 ```html
-<form data-maildrip-apikey="YOUR-GENERATED-APIKEY-ON-MAILDRIP" data-maildrip-campaignid="YOUR-GENERATED-CAMPAIGNID-ON-MAILDRIP" id="mail-drip-contact-form">
+<form data-maildrip-apikey="YOUR-GENERATED-APIKEY-ON-MAILDRIP"  data-maildrip-accesssecret="YOUR-GENERATED-ACCESS-SECRET" data-maildrip-campaignid="YOUR-GENERATED-CAMPAIGNID-ON-MAILDRIP" id="maildrip-contact-form">
   <input type="email" name="mailDrip-recipient-email" >
   <button type="submit">Submit</button>
 </form>
@@ -45,13 +45,14 @@ Initializing the [Maildrip-Html](https://npmjs.com/) on your Html page(s) could 
 <script type="module">
   new MailDripContactCampaign({
       apiKey: "YOUR-GENERATED-APIKEY-ON-MAILDRI",
+      accessSecret: "YOUR-GENERATED-ACCESS-SECRET",
       campaignId: "YOUR-GENERATED-CAMPAIGNID-ON-MAILDRIP"
     });
 </script>
 ```
 > *then*
 ```html
-<form id="mail-drip-contact-form">
+<form id="maildrip-contact-form">
   <input type="email" name="mailDrip-recipient-email" >
   <button type="submit">Submit</button>
 </form>
