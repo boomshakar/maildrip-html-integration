@@ -33,7 +33,8 @@ Initializing the [Maildrip-Html](https://npmjs.com/) on your Html page(s) could 
 
 ```html
 <form data-maildrip-apikey="YOUR-GENERATED-APIKEY-ON-MAILDRIP"  data-maildrip-accesssecret="YOUR-GENERATED-ACCESS-SECRET" data-maildrip-campaignid="YOUR-GENERATED-CAMPAIGNID-ON-MAILDRIP" id="maildrip-contact-form">
-  <input type="email" name="mailDrip-recipient-email" >
+  <input type="text" name="mailDrip-recipient-name" class="maildrip-newsub-name" placeholder="Your Name">
+  <input type="email" name="mailDrip-recipient-email" class="maildrip-newsub-email" placeholder="Your Email">
   <button type="submit">Submit</button>
 </form>
 ```
@@ -53,7 +54,8 @@ Initializing the [Maildrip-Html](https://npmjs.com/) on your Html page(s) could 
 > *then*
 ```html
 <form id="maildrip-contact-form">
-  <input type="email" name="mailDrip-recipient-email" >
+  <input type="text" name="mailDrip-recipient-name" class="maildrip-newsub-name" placeholder="Your Name">
+  <input type="email" name="mailDrip-recipient-email" class="maildrip-newsub-email" placeholder="Your Email">
   <button type="submit">Submit</button>
 </form>
 ```
