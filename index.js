@@ -1,3 +1,4 @@
+import './styles2.js';
 class MailDripContactCampaign {
   submitForm = () => {
       const mdForms = document.querySelectorAll("#maildrip-contact-form");
@@ -9,11 +10,6 @@ class MailDripContactCampaign {
               return null;
             const formName = document.querySelector(".maildrip-newsub-name").value;
             const formEmail = document.querySelector(".maildrip-newsub-email").value;
-            console.log(formName);
-            console.log(formEmail);
-            console.log(this.apiKey);
-            console.log(this.accessSecret);
-            console.log(this.campaignId);
             const responsess = await fetch(`https://api.maildrip.io/api/v1/campaigns/${this.campaignId}/user`, {
               method: 'POST',
               headers: {
@@ -30,7 +26,13 @@ class MailDripContactCampaign {
               
             await responsess.json()
               .then(data => {
-                console.log(data);
+                if (data.success === true) {
+                  document.getElementsByClassName("maildrip-popup")[0].classList.add("active");
+                } else {
+                  document.getElementsByClassName("maildrip-description")[0].innerHTML = data.error;
+                  document.getElementsByClassName("maildrip-title")[0].innerHTML = "Sorry 😒";
+                  document.getElementsByClassName("maildrip-popup")[0].classList.add("active")
+                }
               })
               .catch(err => console.log(err));
               mdForm.reset();
@@ -54,9 +56,6 @@ const checkFormInput = checkFormAttr.children;
 if (typeof innerApikey !== 'undefined' && innerApikey !== "" ||
     typeof innerCampaignId !== 'undefined' && innerCampaignId !== "" || 
     typeof innerAccessSecret !== 'undefined' && innerAccessSecret !== "") {
-      console.log(innerApikey);
-      console.log(innerCampaignId);
-      console.log(innerAccessSecret);
       new MailDripContactCampaign({
         apiKey: innerApikey,
         accessSecret: innerAccessSecret,
